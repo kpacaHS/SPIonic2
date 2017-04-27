@@ -1,4 +1,5 @@
 import { Component } from '@angular/core';
+import { NgForm } from '@angular/forms';
 import { NavController } from 'ionic-angular';
 import { HelperService } from '../../core/services/helperService';
 import { UserService } from '../../core/services/userService';
@@ -10,6 +11,7 @@ import { Dialogs } from '@ionic-native/dialogs';
 export class LoginPage {
 
   isAuthenticating: boolean = false;
+  credentials: any = {};
 
   constructor(public navCtrl: NavController, 
     private helperService: HelperService,
@@ -18,7 +20,7 @@ export class LoginPage {
   {
   }
 
-  async login(): Promise<void> {
+  async login(f: NgForm): Promise<void> {
     var hasConnection = await this.helperService.hasNetworkConnection();
 
     if(hasConnection)
@@ -30,7 +32,16 @@ export class LoginPage {
 
     // explore firebase
     // create own authentication
-    // User.authenticate()
+    var isAuthenticated = await this.userService.authenticate('', '');
+
+    if(isAuthenticated)
+    {
+      this.dialog.alert('Authenticated');
+    }
+    else
+    {
+      this.dialog.alert('Faker!');
+    }
   }
 
   forgotPassword(){}

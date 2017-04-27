@@ -14,5 +14,4 @@ export class StorageService implements IStorageService {
 
 export interface IStorageService {
     setItem(key: string, value: any): Promise<void>;
-
 }

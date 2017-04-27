@@ -7,7 +7,7 @@
     <!-- Main Login secion -->
     <div class="hsp-login-section">
         <!-- Login Authentication Form -->
-        <form name="loginForm" class="form-horizontal" (click)="login()" role="form">
+        <form name="loginForm" #f="ngForm" class="form-horizontal" (click)="login(f)" role="form">
             <!-- Username -->
             <div class="hsp-login-input-wrapper">  
                 <span class="glyphicon glyphicon-user hsp-login-icon btn-lg" ></span>          
@@ -16,6 +16,8 @@
                     placeholder="User ID" 
                     maxlength="100"
                     autocapitalize="off" autocorrect="off"
+                    ngModel
+                    name="username"
                     required>
             </div>
             
@@ -26,6 +28,8 @@
                     class="form-group form-control input-lg hsp-login-input" 
                     maxlength="15"
                     placeholder="Password"
+                    ngModel
+                    name="password"
                     required>
             </div>
             

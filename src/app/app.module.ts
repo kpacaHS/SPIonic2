@@ -1,5 +1,6 @@
 import { NgModule, ErrorHandler } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
 import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
@@ -7,6 +8,7 @@ import { LoginPage } from '../pages/login/login';
 
 import { HelperService } from '../core/services/helperService';
 import { UserService } from '../core/services/userService';
+import { StorageService } from '../core/services/storageService';
 
 import { StatusBar } from '@ionic-native/status-bar';
 import { SplashScreen } from '@ionic-native/splash-screen';
@@ -21,6 +23,7 @@ import { NativeStorage } from '@ionic-native/native-storage';
   ],
   imports: [
     BrowserModule,
+    FormsModule,
     IonicModule.forRoot(MyApp)
   ],
   bootstrap: [IonicApp],
@@ -38,7 +41,8 @@ import { NativeStorage } from '@ionic-native/native-storage';
       provide: ErrorHandler, useClass: IonicErrorHandler
     },
     HelperService,
-    UserService
+    UserService,
+    StorageService
   ]
 })
 export class AppModule {}
