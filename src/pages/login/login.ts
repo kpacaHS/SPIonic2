@@ -11,7 +11,7 @@ import { Dialogs } from '@ionic-native/dialogs';
 export class LoginPage {
 
   isAuthenticating: boolean = false;
-  credentials: any = {};
+  credentials: SPCredential = new SPCredential();
 
   constructor(public navCtrl: NavController, 
     private helperService: HelperService,
@@ -20,19 +20,23 @@ export class LoginPage {
   {
   }
 
+
   async login(f: NgForm): Promise<void> {
+    console.log('login');
     var hasConnection = await this.helperService.hasNetworkConnection();
 
-    if(hasConnection)
+    if(!hasConnection)
     {
       this.dialog.alert('Success');
+      return;
     }
 
+    // i dont think were using this
     // AuthFactory.setCredential(username, password)
 
     // explore firebase
     // create own authentication
-    var isAuthenticated = await this.userService.authenticate('', '');
+    var isAuthenticated = await this.userService.authenticate(this.credentials.username, this.credentials.password);
 
     if(isAuthenticated)
     {
@@ -49,6 +53,12 @@ export class LoginPage {
   goToSupport(){}
 
   goToSignup(){}
+}
 
+export class SPCredential {
 
+  constructor(){}
+
+  username: string;
+  password: string;
 }

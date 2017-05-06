@@ -1,52 +1,19 @@
 
 <div class="hs-content hs-content-background">
     <!-- SupplyPro Title -->
-    <div class="hsp-login-banner-wrapper">
-            <img src="images/banner.png" alt="SUPPLYPRO" class="hsp-login-banner">
-    </div>
     <!-- Main Login secion -->
     <div class="hsp-login-section">
         <!-- Login Authentication Form -->
-        <form name="loginForm" #f="ngForm" class="form-horizontal" (click)="login(f)" role="form">
-            <!-- Username -->
-            <div class="hsp-login-input-wrapper">  
-                <span class="glyphicon glyphicon-user hsp-login-icon btn-lg" ></span>          
-                <input type="text" name="username"
-                    class="form-group form-control input-lg hsp-login-input" 
-                    placeholder="User ID" 
-                    maxlength="100"
-                    autocapitalize="off" autocorrect="off"
-                    ngModel
-                    name="username"
-                    required>
-            </div>
-            
-            <!-- Password -->
-            <div class="hsp-login-input-wrapper">      
-                <span class="glyphicon glyphicon-lock hsp-login-icon btn-lg"></span>     
-                <input type="password" name="password"
-                    class="form-group form-control input-lg hsp-login-input" 
-                    maxlength="15"
-                    placeholder="Password"
-                    ngModel
-                    name="password"
-                    required>
-            </div>
-            
-            <!-- Checkbox -->
-            <div class="form-group hsp-login-form-group" >       
-                <input type="checkbox" id="loginRememberMe" class="hsp-login-checkbox">
-                <label for="loginRememberMe"></label>
-                <label class="hsp-login-label">Remember Me?</label>
-            </div> 
-                    
-            <!-- Sumbit -->
-            <button type="submit" style="background-color:red">Login</button>
-            <div class="hsp-login-authenticating">Signing in...</div>
+        <form (ngSubmit)="login()">
+            <ion-item>
+                <ion-label>Username</ion-label>
+                <ion-input type="text" [(ngModel)]="credentials.username" name="username"></ion-input>
+            </ion-item>
+            <ion-item>
+                <ion-label>Password</ion-label>
+                <ion-input type="password" [(ngModel)]="credentials.password" name="password"></ion-input>
+            </ion-item>
+            <button ion-button type="submit" block>Login</button>
         </form>
-                
-        <button id="forgotPasswordBtn" class="hsp-login-btn-small" (click)="forgotPassword()">Forgot Password</button> 
-        <div class="hs-spacer">&nbsp;</div>	  
-        <button id="createProfileBtn" class="hsp-login-btn-small" (click)="goToSignUp()">For Help or More Info</button>
     </div>
 </div>
