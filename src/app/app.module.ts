@@ -5,6 +5,7 @@ import { IonicApp, IonicModule, IonicErrorHandler } from 'ionic-angular';
 import { MyApp } from './app.component';
 
 import { LoginPage } from '../pages/login/login';
+import { HomePage } from '../pages/home/home';
 
 import { HelperService } from '../core/services/helperService';
 import { UserService } from '../core/services/userService';
@@ -19,7 +20,8 @@ import { NativeStorage } from '@ionic-native/native-storage';
 @NgModule({
   declarations: [
     MyApp,
-    LoginPage
+    LoginPage,
+    HomePage
   ],
   imports: [
     BrowserModule,
@@ -29,7 +31,8 @@ import { NativeStorage } from '@ionic-native/native-storage';
   bootstrap: [IonicApp],
   entryComponents: [
     MyApp,
-    LoginPage
+    LoginPage,
+    HomePage
   ],
   providers: [
     StatusBar,

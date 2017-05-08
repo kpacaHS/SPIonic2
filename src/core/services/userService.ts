@@ -6,9 +6,9 @@ import { AUTH_TOKEN_KEY } from '../constants/appKeys';
 export class UserService {
     constructor(private storageService: StorageService){}
 
-    async authenticate(username: string = '', password: string = ''): Promise<boolean> {
+    async authenticate(username: string = '', password: string = ''): Promise<AuthData> {
         return await (() => {
-            return new Promise<boolean>((resolve, reject)=>{
+            return new Promise<AuthData>((resolve, reject)=>{
 
                 // call api that will check user credentials
 
@@ -21,13 +21,22 @@ export class UserService {
                 if(username && password && username.toLowerCase() === 'krispaks' && password.toLowerCase() === 'password')
                 {
                     this.storageService.setItem(AUTH_TOKEN_KEY, { token: token });
-                    resolve(true);
+                    resolve(new AuthData(true, token));
                 }
                 else
                 {
-                    reject(false);
+                    reject(new AuthData(false, ''));
                 }
             });
         })();
     }
+}
+
+export class AuthData {
+    constructor(isAuthenticated: boolean, token: string){
+        this.isAuthenticated = isAuthenticated;
+        this.token = token;
+    }
+    isAuthenticated: boolean;
+    token: string;
 }

@@ -2,8 +2,9 @@ import { Component } from '@angular/core';
 import { NgForm } from '@angular/forms';
 import { NavController } from 'ionic-angular';
 import { HelperService } from '../../core/services/helperService';
-import { UserService } from '../../core/services/userService';
+import { UserService, AuthData} from '../../core/services/userService';
 import { Dialogs } from '@ionic-native/dialogs';
+import { HomePage } from '../home/home';
 
 @Component({
   templateUrl: 'login.html'
@@ -12,6 +13,8 @@ export class LoginPage {
 
   isAuthenticating: boolean = false;
   credentials: SPCredential = new SPCredential();
+
+  //private authData: AuthData = new AuthData(false, '');
 
   constructor(public navCtrl: NavController, 
     private helperService: HelperService,
@@ -36,15 +39,20 @@ export class LoginPage {
 
     // explore firebase
     // create own authentication
-    var isAuthenticated = await this.userService.authenticate(this.credentials.username, this.credentials.password);
+    // no need for .then since there is already await
+    var authData: any = await this.userService.authenticate(this.credentials.username, this.credentials.password)
+                              .catch((data)=>{
+                                console.log('login not successful');
+                                authData = data;
+                              });
 
-    if(isAuthenticated)
+    if(authData.isAuthenticated)
     {
-      this.dialog.alert('Authenticated');
+      this.navCtrl.push(HomePage);
     }
     else
     {
-      this.dialog.alert('Faker!');
+      console.log('login not successful...');
     }
   }
 
