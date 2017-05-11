@@ -1,0 +1,71 @@
+$font-maven-pro: 'Maven Pro';
+$font-tahoma: 'Tahoma';
+$font-open-sans: 'Open Sans';
+
+/**
+ * Custom fonts
+ */
+
+@include font-face($font-maven-pro, font-files('Maven Pro regular.ttf'), $weight: normal, $style: normal);
+
+@include font-face($font-maven-pro, font-files('Maven Pro 500.ttf'), $weight: 500, $style: normal);
+
+@include font-face($font-maven-pro, font-files('Maven Pro 700.ttf'), $weight: 700, $style: normal);
+
+@include font-face($font-maven-pro, font-files('Maven Pro 900.ttf'), $weight: 900, $style: normal);
+
+@include font-face($font-tahoma, font-files('tahoma.ttf'), $weight: normal, $style: normal);
+
+@include font-face($font-tahoma, font-files('tahomabd.ttf'), $weight: bold, $style: normal);
+
+@include font-face($font-open-sans, font-files('Open Sans regular.ttf'), $weight: normal, $style: normal);
+
+@include font-face($font-open-sans, font-files('Open Sans italic.ttf'), $weight: normal, $style: italic);
+
+@include font-face($font-open-sans, font-files('Open Sans 300.ttf'), $weight: 300, $style: normal);
+
+@include font-face($font-open-sans, font-files('Open Sans 300italic.ttf'), $weight: 300, $style: italic);
+
+@include font-face($font-open-sans, font-files('Open Sans 600.ttf'), $weight: 600, $style: normal);
+
+@include font-face($font-open-sans, font-files('Open Sans 600italic.ttf'), $weight: 600, $style: italic);
+
+@include font-face($font-open-sans, font-files('Open Sans 700.ttf'), $weight: 700, $style: normal);
+
+@include font-face($font-open-sans, font-files('Open Sans 700italic.ttf'), $weight: 700, $style: italic);
+
+@include font-face($font-open-sans, font-files('Open Sans 800.ttf'), $weight: 800, $style: normal);
+
+@include font-face($font-open-sans, font-files('Open Sans 800italic.ttf'), $weight: 800, $style: italic);
+
+@include font-face($font-open-sans, font-files('Open Sans Condensed 300.ttf'), $weight: 300, $style: normal);
+
+@include font-face($font-open-sans, font-files('Open Sans Condensed 300italic.ttf'), $weight: 300, $style: italic);
+
+@include font-face($font-open-sans, font-files('Open Sans Condensed 700.ttf'), $weight: 700, $style: normal);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+

@@ -1,3 +1,119 @@
 page-home {
 
 }
+
+
+ .hs-home-card {
+    height: 25%; 
+    margin: 0px;
+    width: 100%;
+    border-bottom: gray dotted 1px;
+ }
+
+.hsp-home-action-icon {  
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100%;
+    //width: 20%;
+}
+
+.hsp-home-action-icon img{
+    height: 35px;
+    width: 35px;  
+}
+
+.hs-card-grid {
+    height: 100%;
+}
+
+.hs-card-row {
+    height: 100%;
+}
+
+.hs-card-arrow {
+    display: flex;
+    align-items: center;
+    justify-content: flex-end;
+    height: 100%;
+    //width: 10%;
+}
+
+.hs-card-arrow-icon {
+    font-size: 2em;
+    margin-right: 10px;
+}
+
+.hsp-home-title-col {
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+    padding-top: 12%;
+
+    //vertical-align: middle;
+}
+
+.hsp-home-action-title {
+    font-family: $font-tahoma;
+    font-size: 17px;
+    font-weight: bold;
+    color: #000;
+    width: 100%;
+    display: block
+}
+
+.hsp-home-action-count-text {
+    font-family: $font-open-sans;
+    font-size: 17px;
+    font-weight: 600;
+    color: #4f4f4f;
+    width: 100%;
+    display: block;
+}
+
+.hsp-home-action-count-number{
+    font-size: 19px;
+    font-weight: 600;
+    color: #ff662e;
+    width: 100%;
+}
+
+
+/*Top Nav*/
+
+.hsp-topnavbar-menu-container {
+    background-color: $hs-main-color
+}
+
+.hsp-topnavbar-left-wrapper{
+  margin-top: 5px;
+  color: #fff;
+  display: inline-block;
+  text-align: left;
+}
+
+.hsp-topnavbar-logo {
+  height: 40px;
+  padding-top: 1px;
+  padding-bottom: 1px;
+  margin-left: 5px;
+  
+  margin-right: auto;
+  padding-right: 0;
+  padding-left: 0;
+}
+
+.hsp-topnavbar-right-wrapper {
+  height: 50px;
+  
+  color: #fff;
+  display: inline-block;
+  line-height: 3.4em;
+  text-align: right;
+}
+
+.hsp-topnavbar-menu-icon{
+    font-size: 2em;
+    margin-right: 10px;
+}
+/*Top Nav*/

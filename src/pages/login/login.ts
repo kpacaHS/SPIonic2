@@ -40,20 +40,22 @@ export class LoginPage {
     // explore firebase
     // create own authentication
     // no need for .then since there is already await
-    var authData: any = await this.userService.authenticate(this.credentials.username, this.credentials.password)
+    /*var authData: any = await this.userService.authenticate(this.credentials.username, this.credentials.password)
                               .catch((data)=>{
                                 console.log('login not successful');
                                 authData = data;
-                              });
+                              });*/
 
-    if(authData.isAuthenticated)
+    /*if(authData.isAuthenticated)
     {
       this.navCtrl.push(HomePage);
     }
     else
     {
       console.log('login not successful...');
-    }
+    }*/
+
+    this.navCtrl.push(HomePage);
   }
 
   forgotPassword(){}

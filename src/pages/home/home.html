@@ -1,17 +1,89 @@
-<ion-header>
-  <ion-navbar>
-    <ion-title>Home</ion-title>
-  </ion-navbar>
+<ion-header class="hsp-topnavbar-menu-container">
+    <!-- <div class="hsp-topnavbar-left-wrapper">
+        <img class="hsp-topnavbar-logo" src="assets/images/SupplyProLogo_Icon.png" alt="HyphenSolutions SupplyPro">
+    </div>	
+    <div class="hsp-topnavbar-right-wrapper">
+        <div class="hsp-topnavbar-icon-wrapper" ng-if="search" ng-click="actionSearch()">
+            <span class="glyphicon glyphicon-search hsp-topnavbar-icon"></span>
+        </div>
+        <div class="hsp-topnavbar-icon-wrapper" snap-toggle="right">
+            <ion-icon name="ios-menu"></ion-icon>
+        </div>
+    </div> -->
+    <ion-grid>
+        <ion-row>
+            <ion-col col-6 class="hsp-topnavbar-left-wrapper">
+                <img class="hsp-topnavbar-logo" src="assets/images/SupplyProLogo_Icon.png" alt="HyphenSolutions SupplyPro">
+            </ion-col>
+            <ion-col col-6 class="hsp-topnavbar-right-wrapper">
+                <ion-icon class="hsp-topnavbar-menu-icon" name="ios-menu"></ion-icon>
+            </ion-col>
+        </ion-row>
+    </ion-grid>
 </ion-header>
-
-<ion-content padding>
-  <h2>Welcome to Ionic!</h2>
-  <p>
-    This starter project comes with simple tabs-based layout for apps
-    that are going to primarily use a Tabbed UI.
-  </p>
-  <p>
-    Take a look at the <code>src/pages/</code> directory to add or change tabs,
-    update any existing page or create new pages.
-  </p>
+<ion-content>
+    <ion-card class="hs-home-card">
+        <ion-grid class="hs-card-grid">
+            <ion-row class="hs-card-row">
+                <ion-col col-3 class="hsp-home-action-icon">
+                    <img src="assets/images/AcceptOrders_Icon.png" alt="Accept Orders" X>
+                </ion-col>
+                <ion-col col-7 class="hsp-home-title-col">
+                    <ion-row class="hsp-home-action-title">RECEIVED ORDERS</ion-row>	
+                    <ion-row class="hsp-home-action-count-text">
+                        <span class="hsp-home-action-count-number" 
+                            ng-bind="orderCount.acceptOrders"></span> New Orders
+                    </ion-row>
+                </ion-col>
+                <ion-col class="hs-card-arrow">
+                    <ion-icon class="hs-card-arrow-icon" name="ios-arrow-forward"></ion-icon>    
+                </ion-col>
+            </ion-row>
+        </ion-grid>    
+    </ion-card>
+    <ion-card class="hs-home-card">
+        <ion-grid class="hs-card-grid">
+            <ion-row class="hs-card-row">
+                <ion-col col-3 class="hsp-home-action-icon">
+                    <img src="assets/images/CompleteOrders_Icon.png" alt="Complete Orders" X>
+                </ion-col>
+                <ion-col col-7 class="hsp-home-title-col">
+                    <ion-row class="hsp-home-action-title">TO DO ORDERS</ion-row>	
+                </ion-col>
+                <ion-col class="hs-card-arrow">
+                    <ion-icon class="hs-card-arrow-icon" name="ios-arrow-forward"></ion-icon>    
+                </ion-col>
+            </ion-row>
+        </ion-grid> 
+    </ion-card>
+    <ion-card class="hs-home-card">
+        <ion-grid class="hs-card-grid">
+            <ion-row class="hs-card-row">
+                <ion-col col-3 class="hsp-home-action-icon">
+                    <img src="assets/images/ManageDefects_Icon.png" alt="Manage Defects" X>
+                </ion-col>
+                <ion-col col-7 class="hsp-home-title-col">
+                    <ion-row class="hsp-home-action-title">MANAGE DEFECTS</ion-row>	
+                </ion-col>
+                <ion-col class="hs-card-arrow">
+                    <ion-icon class="hs-card-arrow-icon" name="ios-arrow-forward"></ion-icon>    
+                </ion-col>
+            </ion-row>
+        </ion-grid> 
+    </ion-card>
+    <ion-card class="hs-home-card">
+        <ion-grid class="hs-card-grid">
+            <ion-row class="hs-card-row">
+                <ion-col col-3 class="hsp-home-action-icon">
+                    <img src="assets/images/ViewDayCalendar_Icon.png" alt="View Day Calendar" X>
+                </ion-col>
+                <ion-col col-7 class="hsp-home-title-col">
+                    <ion-row class="hsp-home-action-title">VIEW DAY CALENDAR</ion-row>	
+                </ion-col>
+                <ion-col class="hs-card-arrow">
+                    <ion-icon class="hs-card-arrow-icon" name="ios-arrow-forward"></ion-icon>    
+                </ion-col>
+            </ion-row>
+        </ion-grid> 
+    </ion-card>
 </ion-content>
